@@ -32,7 +32,6 @@ public class Customer {
 	private String password;
 	
 	
-
 	public String getUsername() {
 		return username;
 	}
@@ -80,4 +79,5 @@ public class Customer {
 	public void setReservation(List<Reservation> reservation) {
 		this.reservation = reservation;
 	}
+	
 }

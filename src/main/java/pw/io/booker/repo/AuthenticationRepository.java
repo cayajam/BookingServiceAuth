@@ -6,7 +6,9 @@ import pw.io.booker.model.Authentication;
 import pw.io.booker.model.Customer;
 
 public interface AuthenticationRepository extends CrudRepository<Authentication, Integer> {
-
-	public Customer findByCustomer(Customer customer);
+	
+	public Authentication findByCustomer(Customer customer);
+	
+	public Authentication findByToken(String token);
 	
 }
