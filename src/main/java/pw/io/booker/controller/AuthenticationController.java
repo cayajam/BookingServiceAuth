@@ -56,12 +56,9 @@ public class AuthenticationController {
 	}
 	
 	@PostMapping("/logout")
-	public void deleteTokenOnLogOut(@RequestHeader("token") String token) {
-		Authentication authentication;
-		authentication = authenticationRepository.findByToken(token);
-		
-		if (authentication != null) {
-			authenticationRepository.delete(authentication);
+	public void deleteTokenOnLogOut(@RequestHeader("token") String token) {		
+		if (authenticationRepository.findByToken(token) != null) {
+			authenticationRepository.delete(authenticationRepository.findByToken(token));
 		} 
 	}
 	
